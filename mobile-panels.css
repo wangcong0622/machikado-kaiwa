@@ -1,0 +1,77 @@
+@media (max-width: 700px), (max-height: 500px) and (max-width: 1000px) {
+  #challenge, #finder {
+    box-sizing: border-box;
+    width: min(94vw, 760px);
+    max-width: calc(100% - env(safe-area-inset-left) - env(safe-area-inset-right) - 16px);
+    max-height: calc(100dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom) - 16px);
+    overscroll-behavior: contain;
+    border-radius: 14px;
+  }
+  .trial-header {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #fffef9;
+    gap: 8px;
+    padding: 6px 12px;
+  }
+  .trial-panel { min-width: 0; padding: 15px; }
+  #challenge button, #trialTranslation summary, #guideCard button,
+  #closeFinder, .obs-modal button { min-height: 44px; }
+  #trialTranslation summary { align-content: center; }
+  #trialOptions button { overflow-wrap: anywhere; }
+  #guideClose, #closeFinder, .obs-modal .obs-close, .obs-modal .obs-marker { min-width: 44px; }
+  #guideCard { padding: 10px 14px 14px; }
+  #guideText { margin-bottom: 10px; }
+  /* The desktop observer is sized to the projection frame by its JS. */
+  dialog.obs-modal {
+    top: max(8px, env(safe-area-inset-top)) !important;
+    left: max(8px, env(safe-area-inset-left)) !important;
+    right: max(8px, env(safe-area-inset-right));
+    bottom: max(8px, env(safe-area-inset-bottom));
+    width: auto !important;
+    height: fit-content !important;
+    max-height: calc(100dvh - max(8px, env(safe-area-inset-top)) - max(8px, env(safe-area-inset-bottom)));
+    margin: auto;
+    border-radius: 14px;
+  }
+  .obs-scroll { max-height: inherit; scrollbar-gutter: auto; }
+  #finder { padding: 14px; }
+  #finderInput { font-size: 16px; }
+  #finderList { max-height: 52dvh; overscroll-behavior: contain; }
+  .studio-grid .transport label, .studio-grid .dub-switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    min-height: 44px;
+  }
+  #studio button, #studio select, #studio .voice-import summary { min-height: 44px; }
+  #studio select { font-size: 16px; }
+  #studio .bookmark { width: 44px; }
+  #studio input[type=file] { max-width: 100%; }
+}
+@media (max-width: 700px) {
+  #collection .library-header { align-items: stretch; flex-direction: column; gap: 10px; }
+  #libraryFilters { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 4px; }
+  #libraryFilters[hidden] { display: none; }
+  #libraryFilters button { padding-inline: 2px; font-size: 13px; }
+  #studio .transport { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 10px; }
+  #studio .transport label { justify-content: center; }
+  #studio .transport :is(button, label) { margin: 0; }
+  #studio .line { padding-left: 9px; grid-template-columns: 26px minmax(0,1fr); gap: 7px; }
+  #studio .line .icon { width: 26px; height: 26px; }
+  #studio .studio-grid > *, #studio .studio-grid aside section { min-width: 0; }
+  #studio .voice-import summary { align-content: center; }
+  #challenge .trial-frame { min-height: 0; }
+  #challenge .trial-frame > div { position: static; padding: 14px 16px; }
+  #challenge .trial-frame img { inset: 0; }
+  #trialPrompt { font-size: 1.05rem; }
+  #trialContext { margin-top: 4px; }
+}
+@media (max-height: 500px) and (min-width: 620px) and (max-width: 1000px) {
+  .trial-layout { grid-template-columns: minmax(175px, .75fr) minmax(0, 1.6fr); }
+  #challenge .trial-frame { min-height: 0; }
+  #challenge .trial-frame > div { position: sticky; top: 58px; padding: 15px; }
+  .obs-grid { grid-template-columns: minmax(0,1fr) minmax(0,1.2fr); gap: 14px; }
+  #finderList { max-height: 40dvh; }
+}

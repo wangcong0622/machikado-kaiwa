@@ -1,0 +1,26 @@
+:root{--paper:#f7f8f3;--white:#fffefa;--rule:#d9e1d8;--ink:#203b33;--green:#235847;--mint:#e7f1e9;--muted:#566b61}
+body{background:linear-gradient(155deg,#ecf3e9 0,transparent 32rem),var(--paper)}
+.mast{background:#fffefaed}.scene-info{padding-top:clamp(10px,2.4vw,38px)}
+.hero{gap:clamp(20px,3vw,46px);grid-template-columns:minmax(248px,.62fr) minmax(0,1.65fr)}
+.scene-info h1{font-size:clamp(30px,3.45vw,53px);line-height:1.16;letter-spacing:-.055em;font-weight:650}
+.scene-info .intro{font-size:15px;line-height:1.83}.scene-tools{display:grid;grid-template-columns:1fr auto;gap:7px;align-items:center}
+#castLabel{font-size:13px;font-weight:650;color:var(--muted)}#routeProgress{grid-row:1;grid-column:2;font-size:12px}
+#cast{grid-column:1/-1;display:flex;gap:6px;flex-wrap:wrap}
+.cast-option{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--rule);border-radius:24px;padding:3px 9px 3px 4px;min-height:36px;background:var(--white);font-size:13px}
+.cast-option:first-child{padding-inline:10px}.cast-option img{width:28px;height:28px;object-fit:cover;border-radius:50%}
+.cast-option[aria-pressed=true]{background:var(--mint);border-color:var(--green);color:var(--green);box-shadow:0 0 0 1px var(--green) inset}
+.observe-entry{display:flex;align-items:center;gap:11px;width:100%;margin-top:16px;padding:6px 12px 6px 6px;border:1px solid #d9e2d6;border-radius:12px;text-align:left;background:var(--white)}
+.observe-entry:hover{background:#f0f6ef;border-color:#8aa993}.observe-thumb{display:block;flex:none;width:62px;height:48px;border-radius:8px;overflow:hidden}.observe-thumb img{width:100%;height:100%;object-fit:cover}
+.observe-entry small,.observe-entry strong{display:block}.observe-entry small{font-size:12px;color:var(--muted)}.observe-entry strong{font-size:15px;color:var(--green)}
+.observe-lens{margin-left:auto;display:grid;place-items:center;width:29px;height:29px;border-radius:50%;background:var(--mint);font-size:25px;line-height:1;color:var(--green)}
+.cinema{box-shadow:0 14px 44px -28px #2449357a}.cn-bar{position:relative;inset:auto}.cn-scrub-preview{position:absolute;z-index:4;bottom:calc(100% + 4px);width:124px;transform:translateX(-50%);overflow:hidden;border:2px solid var(--white);border-radius:8px;background:var(--white);color:var(--ink);box-shadow:0 5px 18px #122b2345;pointer-events:none}
+.cn-scrub-preview img{width:100%;height:63px;object-fit:cover;display:block}.cn-scrub-preview span{display:block;padding:3px 6px;font:600 12px/1.4 system-ui,sans-serif}
+@media(max-width:700px){.hero{display:flex;flex-direction:column;gap:13px}.scene-info{display:contents}.scene-meta{order:0}.scene-info h1{order:1;margin:0}.scene-info .scene-label{order:2;margin:0}.intro{order:3;margin:0}.scene-actions{order:4}.screening{order:5;width:100%}.observe-entry{order:6;margin:0}.scene-tools{order:7;width:100%;margin:0}.cn-scrub-preview{width:104px}.cn-scrub-preview img{height:52px}}
+.cinema .cn-note .inspect-from-note{position:static;color:var(--green);font:650 13px/1.5 system-ui,sans-serif;padding:4px 9px;background:var(--mint);border-radius:6px}
+.cn-bar .fullscreen-observe{display:none}.cinema:is(:fullscreen,.cn-expanded) .fullscreen-observe{display:grid;font-size:22px}
+.cn-call{position:absolute;inset:0;display:flex;background:#f5f7f1;gap:2px}.cn-call>div{position:relative;min-width:0;flex:1;overflow:hidden;transition:flex .45s ease}.cn-call>div.turn{flex:1.17}
+.cn-call img{width:100%;height:100%;object-fit:cover;display:block}.cn-call>div:after{content:"";position:absolute;inset:50% 0 0;background:linear-gradient(transparent,#13282191);pointer-events:none}
+.cn-call span{position:absolute;bottom:12px;left:12px;z-index:1;font:600 clamp(11px,1.2vw,15px)/1.5 system-ui,sans-serif;color:white;padding:3px 8px;border:1px solid #ffffff80;border-radius:5px;background:#1f302ba6}
+.cn-call .turn span{background:#f4fff0;color:#21483c;border-color:#c1dfc6}.cn-visual:has(.cn-call:not([hidden])) :is(.cn-slate,.cn-pin){visibility:hidden}
+.cn-call-thumb{display:flex;height:46px;overflow:hidden}.cinema .cn-camera-list .cn-call-thumb img{width:50%;height:100%;object-fit:cover}
+@media(prefers-reduced-motion:reduce){.cn-call>div{transition:none}}

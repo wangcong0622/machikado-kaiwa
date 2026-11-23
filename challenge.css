@@ -1,0 +1,33 @@
+#challenge {width:min(1020px,94vw);max-height:90vh;padding:0;border:1px solid #d9e1da;border-radius:20px;color:#233c37;background:#fffef9;box-shadow:0 22px 90px #112c3650;overflow:auto}
+#challenge::backdrop {background:#20342dcc;backdrop-filter:blur(5px)}
+#challenge [hidden] {display:none}
+.trial-header,.trial-cue,.trial-actions {display:flex;align-items:center;gap:12px}
+.trial-header {padding:14px 22px;border-bottom:1px solid #dddcd2}
+#trialProgress {flex:1;color:#53665b;font-size:.88rem}
+#challenge button:not(.primary) {border:1px solid #cdd7cc;border-radius:10px;background:#fff;color:#24473c;padding:8px 13px;cursor:pointer;font:inherit}
+#challenge button:focus-visible {outline:3px solid #347c67;outline-offset:2px}
+.trial-layout {display:grid;grid-template-columns:34% 1fr}
+.trial-frame {position:relative;min-height:380px;isolation:isolate;background:#31463e}
+.trial-frame img {position:absolute;width:100%;height:100%;object-fit:cover;z-index:-2}
+.trial-frame::after {content:"";position:absolute;inset:0;background:linear-gradient(transparent 25%,#12281ef5);z-index:-1}
+#trialContext {font-size:.89rem;line-height:1.7;margin:10px 0 0;color:white}
+.trial-frame>div {position:absolute;bottom:26px;left:23px;right:16px;color:white}
+.trial-frame h2 {font:500 clamp(1.4rem,2.8vw,2.5rem)/1.35 Georgia,serif;margin:.3em 0 0;color:white}
+.trial-panel {align-self:center;padding:clamp(20px,3vw,38px)}
+.trial-cue {justify-content:space-between;color:#386854}
+#trialPrompt {font-size:1.15rem;line-height:1.65;margin:12px 0 8px}
+#trialTranslation {font-size:.9rem;color:#54645e}
+#trialTranslation summary {cursor:pointer}
+#trialAsk {font-size:1rem;margin:21px 0 12px}
+#trialOptions {display:grid;gap:8px}
+#trialOptions button {display:flex;align-items:baseline;gap:12px;text-align:left;line-height:1.5!important;padding:11px 14px!important}
+#trialOptions button::before {content:attr(data-letter);font-size:.78rem;color:#697a70;font-weight:bold}
+#trialOptions button:enabled:hover {background:#eef5ec;border-color:#62836b}
+#trialOptions button[data-result=wrong] {background:#fbefdf;border-color:#b98c56}
+#trialOptions button[data-result=right] {background:#e7f4e8;border-color:#5c946a}
+#trialFeedback {line-height:1.65;margin:16px 0 0}
+#trialFeedback:empty,.trial-actions:has([hidden]+[hidden]) {display:none}
+#trialAudioStatus {display:block;color:#906346}
+.trial-actions {margin-top:16px;flex-wrap:wrap}
+#challenge .primary {padding:10px 18px}
+@media(max-width:720px){.trial-layout{grid-template-columns:1fr}.trial-frame{min-height:125px}.trial-frame>div{bottom:12px}.trial-frame img{object-position:50% 38%}}
