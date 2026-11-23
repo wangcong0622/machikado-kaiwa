@@ -37,3 +37,28 @@
   .scene-info { display:block; }
   .cinema.cn-expanded .cn-visual { min-height:150px; }
 }
+
+/* Keep the film and its primary actions together in portrait. */
+@media (max-width:700px) and (orientation:portrait) {
+  .hero { gap:8px; }
+  .scene-info h1 { font-size:clamp(25px,7vw,32px); }
+  .scene-info .intro { font-size:14px; line-height:1.55; }
+  .scene-actions { grid-template-columns:1.12fr 1fr 1fr; gap:5px; }
+  #scenePlay { grid-column:auto; }
+  .scene-actions button { padding-inline:3px; font-size:14px; }
+  .scene-actions #jumpChoice .choice-prefix, .scene-actions button span[aria-hidden] { display:none; }
+  .screening { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:4px 8px; align-items:start; }
+  #cinemaHost { grid-column:1/-1; grid-row:1; }
+  .screening .reel { grid-column:1; grid-row:2; margin:0; }
+  .screening .projection-tools { grid-column:2; grid-row:2; margin:0; }
+  .screening:has(.reel[open]) .reel { grid-column:1/-1; }
+  .screening:has(.reel[open]) .projection-tools { grid-row:3; }
+  #collection .library-group .cards {
+    display:grid; grid-template-columns:none; grid-auto-flow:column; grid-auto-columns:min(77%,310px);
+    overflow-x:auto; scroll-snap-type:x proximity; gap:8px; padding:3px 2px 7px;
+  }
+  #collection .cards .card { flex-direction:row; scroll-snap-align:start; }
+  #collection .cards .card-picture { width:28%; align-self:stretch; aspect-ratio:auto; flex:none; }
+  #collection .cards .card-picture img { position:absolute; inset:0; }
+  #collection .cards .card-copy { min-width:0; padding:8px; }
+}
